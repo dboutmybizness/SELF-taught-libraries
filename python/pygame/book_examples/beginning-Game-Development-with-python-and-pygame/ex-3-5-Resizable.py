@@ -15,20 +15,20 @@ background = pygame.image.load(background_image_filename).convert()
 
 while True:
 
-	event = pygame.event.wait()
+    event = pygame.event.wait()
 
-	if event.type == QUIT:
-		exit()
+    if event.type == QUIT:
+        exit()
 
-	if event.type == VIDEORESIZE:
-		SCREEN_SIZE = event.size
-		screen = pygame.display.set_mode(SCREEN_SIZE, RESIZABLE, 32)
-		pygame.display.set_caption("Window resized to " +str(event.size))
+    if event.type == VIDEORESIZE:
+        SCREEN_SIZE = event.size
+        screen = pygame.display.set_mode(SCREEN_SIZE, RESIZABLE, 32)
+        pygame.display.set_caption("Window resized to " +str(event.size))
 
-	screen_width, screen_height = SCREEN_SIZE
+    screen_width, screen_height = SCREEN_SIZE
 
-	for y in range(0, screen_height, background.get_height()):
-		for x in range(0, screen_width, background.get_width()):
-			screen.blit(background, (x,y))
+    for y in range(0, screen_height, background.get_height()):
+        for x in range(0, screen_width, background.get_width()):
+            screen.blit(background, (x,y))
 
-	pygame.display.update()
+    pygame.display.update()
